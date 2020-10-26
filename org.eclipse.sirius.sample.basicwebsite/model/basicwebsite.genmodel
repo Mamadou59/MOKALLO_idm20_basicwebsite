@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/org.eclipse.sirius.sample.basicwebsite/src-gen"
+    creationIcons="false" editDirectory="/org.eclipse.sirius.sample.basicwebsite.edit/src-gen"
+    editorDirectory="/org.eclipse.sirius.sample.basicwebsite.editor/src-gen" modelPluginID="org.eclipse.sirius.sample.basicwebsite"
+    modelName="Basicwebsite" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>basicwebsite.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Basicwebsite" basePackage="org.eclipse.sirius.sample" disposableProviderFactory="true"
+      ecorePackage="basicwebsite.ecore#/">
+    <genClasses ecoreClass="basicwebsite.ecore#//WebSite">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute basicwebsite.ecore#//WebSite/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference basicwebsite.ecore#//WebSite/pages"/>
+    </genClasses>
+    <genClasses ecoreClass="basicwebsite.ecore#//Page">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute basicwebsite.ecore#//Page/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference basicwebsite.ecore#//Page/pagecontents"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute basicwebsite.ecore#//Page/linkaddress"/>
+    </genClasses>
+    <genClasses ecoreClass="basicwebsite.ecore#//Paragraph">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute basicwebsite.ecore#//Paragraph/text"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute basicwebsite.ecore#//Paragraph/linkaddress"/>
+    </genClasses>
+    <genClasses ecoreClass="basicwebsite.ecore#//Image">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute basicwebsite.ecore#//Image/src"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute basicwebsite.ecore#//Image/alt"/>
+    </genClasses>
+    <genClasses ecoreClass="basicwebsite.ecore#//Section">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference basicwebsite.ecore#//Section/paragraphs"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference basicwebsite.ecore#//Section/buttons"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference basicwebsite.ecore#//Section/links"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference basicwebsite.ecore#//Section/subSections"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference basicwebsite.ecore#//Section/images"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute basicwebsite.ecore#//Section/title"/>
+    </genClasses>
+    <genClasses ecoreClass="basicwebsite.ecore#//Button"/>
+    <genClasses ecoreClass="basicwebsite.ecore#//Link">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute basicwebsite.ecore#//Link/address"/>
+    </genClasses>
+    <genClasses ecoreClass="basicwebsite.ecore#//PageContent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute basicwebsite.ecore#//PageContent/name"/>
+    </genClasses>
+    <genClasses ecoreClass="basicwebsite.ecore#//PageButton">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference basicwebsite.ecore#//PageButton/page"/>
+    </genClasses>
+    <genClasses ecoreClass="basicwebsite.ecore#//ParagraphButton">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference basicwebsite.ecore#//ParagraphButton/paragraph"/>
+    </genClasses>
+    <genClasses ecoreClass="basicwebsite.ecore#//PageLink">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference basicwebsite.ecore#//PageLink/page"/>
+    </genClasses>
+    <genClasses ecoreClass="basicwebsite.ecore#//ParagraphLink">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference basicwebsite.ecore#//ParagraphLink/paragraph"/>
+    </genClasses>
+    <genClasses ecoreClass="basicwebsite.ecore#//ExternalLink"/>
+  </genPackages>
+</genmodel:GenModel>

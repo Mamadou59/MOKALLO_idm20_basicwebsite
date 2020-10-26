@@ -6,14 +6,16 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.sirius.sample.basicwebsite.BasicwebsitePackage;
 import org.eclipse.sirius.sample.basicwebsite.Button;
 import org.eclipse.sirius.sample.basicwebsite.Image;
@@ -29,67 +31,17 @@ import org.eclipse.sirius.sample.basicwebsite.Section;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.sirius.sample.basicwebsite.impl.SectionImpl#getParagraphs <em>Paragraphs</em>}</li>
- *   <li>{@link org.eclipse.sirius.sample.basicwebsite.impl.SectionImpl#getButtons <em>Buttons</em>}</li>
- *   <li>{@link org.eclipse.sirius.sample.basicwebsite.impl.SectionImpl#getLinks <em>Links</em>}</li>
- *   <li>{@link org.eclipse.sirius.sample.basicwebsite.impl.SectionImpl#getSubSections <em>Sub Sections</em>}</li>
- *   <li>{@link org.eclipse.sirius.sample.basicwebsite.impl.SectionImpl#getImages <em>Images</em>}</li>
  *   <li>{@link org.eclipse.sirius.sample.basicwebsite.impl.SectionImpl#getTitle <em>Title</em>}</li>
+ *   <li>{@link org.eclipse.sirius.sample.basicwebsite.impl.SectionImpl#getParagraphs <em>Paragraphs</em>}</li>
+ *   <li>{@link org.eclipse.sirius.sample.basicwebsite.impl.SectionImpl#getLinks <em>Links</em>}</li>
+ *   <li>{@link org.eclipse.sirius.sample.basicwebsite.impl.SectionImpl#getSections <em>Sections</em>}</li>
+ *   <li>{@link org.eclipse.sirius.sample.basicwebsite.impl.SectionImpl#getButtons <em>Buttons</em>}</li>
+ *   <li>{@link org.eclipse.sirius.sample.basicwebsite.impl.SectionImpl#getImages <em>Images</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class SectionImpl extends PageContentImpl implements Section {
-	/**
-	 * The cached value of the '{@link #getParagraphs() <em>Paragraphs</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParagraphs()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Paragraph> paragraphs;
-
-	/**
-	 * The cached value of the '{@link #getButtons() <em>Buttons</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getButtons()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Button> buttons;
-
-	/**
-	 * The cached value of the '{@link #getLinks() <em>Links</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLinks()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Link> links;
-
-	/**
-	 * The cached value of the '{@link #getSubSections() <em>Sub Sections</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSubSections()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Section> subSections;
-
-	/**
-	 * The cached value of the '{@link #getImages() <em>Images</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getImages()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Image> images;
-
 	/**
 	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -109,6 +61,56 @@ public class SectionImpl extends PageContentImpl implements Section {
 	 * @ordered
 	 */
 	protected String title = TITLE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getParagraphs() <em>Paragraphs</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParagraphs()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Paragraph> paragraphs;
+
+	/**
+	 * The cached value of the '{@link #getLinks() <em>Links</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLinks()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Link> links;
+
+	/**
+	 * The cached value of the '{@link #getSections() <em>Sections</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSections()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Section> sections;
+
+	/**
+	 * The cached value of the '{@link #getButtons() <em>Buttons</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getButtons()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Button> buttons;
+
+	/**
+	 * The cached value of the '{@link #getImages() <em>Images</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getImages()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Image> images;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -134,22 +136,9 @@ public class SectionImpl extends PageContentImpl implements Section {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Paragraph> getParagraphs() {
-		if (paragraphs == null) {
-			paragraphs = new EObjectResolvingEList<Paragraph>(Paragraph.class, this,
-					BasicwebsitePackage.SECTION__PARAGRAPHS);
-		}
-		return paragraphs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<Button> getButtons() {
 		if (buttons == null) {
-			buttons = new EObjectResolvingEList<Button>(Button.class, this, BasicwebsitePackage.SECTION__BUTTONS);
+			buttons = new EObjectContainmentEList<Button>(Button.class, this, BasicwebsitePackage.SECTION__BUTTONS);
 		}
 		return buttons;
 	}
@@ -161,7 +150,7 @@ public class SectionImpl extends PageContentImpl implements Section {
 	 */
 	public EList<Link> getLinks() {
 		if (links == null) {
-			links = new EObjectResolvingEList<Link>(Link.class, this, BasicwebsitePackage.SECTION__LINKS);
+			links = new EObjectContainmentEList<Link>(Link.class, this, BasicwebsitePackage.SECTION__LINKS);
 		}
 		return links;
 	}
@@ -171,12 +160,11 @@ public class SectionImpl extends PageContentImpl implements Section {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Section> getSubSections() {
-		if (subSections == null) {
-			subSections = new EObjectResolvingEList<Section>(Section.class, this,
-					BasicwebsitePackage.SECTION__SUB_SECTIONS);
+	public EList<Section> getSections() {
+		if (sections == null) {
+			sections = new EObjectContainmentEList<Section>(Section.class, this, BasicwebsitePackage.SECTION__SECTIONS);
 		}
-		return subSections;
+		return sections;
 	}
 
 	/**
@@ -186,9 +174,31 @@ public class SectionImpl extends PageContentImpl implements Section {
 	 */
 	public EList<Image> getImages() {
 		if (images == null) {
-			images = new EObjectResolvingEList<Image>(Image.class, this, BasicwebsitePackage.SECTION__IMAGES);
+			images = new EObjectContainmentEList<Image>(Image.class, this, BasicwebsitePackage.SECTION__IMAGES);
 		}
 		return images;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case BasicwebsitePackage.SECTION__PARAGRAPHS:
+			return ((InternalEList<?>) getParagraphs()).basicRemove(otherEnd, msgs);
+		case BasicwebsitePackage.SECTION__LINKS:
+			return ((InternalEList<?>) getLinks()).basicRemove(otherEnd, msgs);
+		case BasicwebsitePackage.SECTION__SECTIONS:
+			return ((InternalEList<?>) getSections()).basicRemove(otherEnd, msgs);
+		case BasicwebsitePackage.SECTION__BUTTONS:
+			return ((InternalEList<?>) getButtons()).basicRemove(otherEnd, msgs);
+		case BasicwebsitePackage.SECTION__IMAGES:
+			return ((InternalEList<?>) getImages()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -217,21 +227,34 @@ public class SectionImpl extends PageContentImpl implements Section {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Paragraph> getParagraphs() {
+		if (paragraphs == null) {
+			paragraphs = new EObjectContainmentEList<Paragraph>(Paragraph.class, this,
+					BasicwebsitePackage.SECTION__PARAGRAPHS);
+		}
+		return paragraphs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case BasicwebsitePackage.SECTION__PARAGRAPHS:
-			return getParagraphs();
-		case BasicwebsitePackage.SECTION__BUTTONS:
-			return getButtons();
-		case BasicwebsitePackage.SECTION__LINKS:
-			return getLinks();
-		case BasicwebsitePackage.SECTION__SUB_SECTIONS:
-			return getSubSections();
-		case BasicwebsitePackage.SECTION__IMAGES:
-			return getImages();
 		case BasicwebsitePackage.SECTION__TITLE:
 			return getTitle();
+		case BasicwebsitePackage.SECTION__PARAGRAPHS:
+			return getParagraphs();
+		case BasicwebsitePackage.SECTION__LINKS:
+			return getLinks();
+		case BasicwebsitePackage.SECTION__SECTIONS:
+			return getSections();
+		case BasicwebsitePackage.SECTION__BUTTONS:
+			return getButtons();
+		case BasicwebsitePackage.SECTION__IMAGES:
+			return getImages();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -245,28 +268,28 @@ public class SectionImpl extends PageContentImpl implements Section {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+		case BasicwebsitePackage.SECTION__TITLE:
+			setTitle((String) newValue);
+			return;
 		case BasicwebsitePackage.SECTION__PARAGRAPHS:
 			getParagraphs().clear();
 			getParagraphs().addAll((Collection<? extends Paragraph>) newValue);
-			return;
-		case BasicwebsitePackage.SECTION__BUTTONS:
-			getButtons().clear();
-			getButtons().addAll((Collection<? extends Button>) newValue);
 			return;
 		case BasicwebsitePackage.SECTION__LINKS:
 			getLinks().clear();
 			getLinks().addAll((Collection<? extends Link>) newValue);
 			return;
-		case BasicwebsitePackage.SECTION__SUB_SECTIONS:
-			getSubSections().clear();
-			getSubSections().addAll((Collection<? extends Section>) newValue);
+		case BasicwebsitePackage.SECTION__SECTIONS:
+			getSections().clear();
+			getSections().addAll((Collection<? extends Section>) newValue);
+			return;
+		case BasicwebsitePackage.SECTION__BUTTONS:
+			getButtons().clear();
+			getButtons().addAll((Collection<? extends Button>) newValue);
 			return;
 		case BasicwebsitePackage.SECTION__IMAGES:
 			getImages().clear();
 			getImages().addAll((Collection<? extends Image>) newValue);
-			return;
-		case BasicwebsitePackage.SECTION__TITLE:
-			setTitle((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -280,23 +303,23 @@ public class SectionImpl extends PageContentImpl implements Section {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+		case BasicwebsitePackage.SECTION__TITLE:
+			setTitle(TITLE_EDEFAULT);
+			return;
 		case BasicwebsitePackage.SECTION__PARAGRAPHS:
 			getParagraphs().clear();
-			return;
-		case BasicwebsitePackage.SECTION__BUTTONS:
-			getButtons().clear();
 			return;
 		case BasicwebsitePackage.SECTION__LINKS:
 			getLinks().clear();
 			return;
-		case BasicwebsitePackage.SECTION__SUB_SECTIONS:
-			getSubSections().clear();
+		case BasicwebsitePackage.SECTION__SECTIONS:
+			getSections().clear();
+			return;
+		case BasicwebsitePackage.SECTION__BUTTONS:
+			getButtons().clear();
 			return;
 		case BasicwebsitePackage.SECTION__IMAGES:
 			getImages().clear();
-			return;
-		case BasicwebsitePackage.SECTION__TITLE:
-			setTitle(TITLE_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -310,18 +333,18 @@ public class SectionImpl extends PageContentImpl implements Section {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case BasicwebsitePackage.SECTION__PARAGRAPHS:
-			return paragraphs != null && !paragraphs.isEmpty();
-		case BasicwebsitePackage.SECTION__BUTTONS:
-			return buttons != null && !buttons.isEmpty();
-		case BasicwebsitePackage.SECTION__LINKS:
-			return links != null && !links.isEmpty();
-		case BasicwebsitePackage.SECTION__SUB_SECTIONS:
-			return subSections != null && !subSections.isEmpty();
-		case BasicwebsitePackage.SECTION__IMAGES:
-			return images != null && !images.isEmpty();
 		case BasicwebsitePackage.SECTION__TITLE:
 			return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
+		case BasicwebsitePackage.SECTION__PARAGRAPHS:
+			return paragraphs != null && !paragraphs.isEmpty();
+		case BasicwebsitePackage.SECTION__LINKS:
+			return links != null && !links.isEmpty();
+		case BasicwebsitePackage.SECTION__SECTIONS:
+			return sections != null && !sections.isEmpty();
+		case BasicwebsitePackage.SECTION__BUTTONS:
+			return buttons != null && !buttons.isEmpty();
+		case BasicwebsitePackage.SECTION__IMAGES:
+			return images != null && !images.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

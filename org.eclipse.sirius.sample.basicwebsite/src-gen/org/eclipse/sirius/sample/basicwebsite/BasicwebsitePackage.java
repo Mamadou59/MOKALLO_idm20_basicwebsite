@@ -131,22 +131,13 @@ public interface BasicwebsitePackage extends EPackage {
 	int PAGE__PAGECONTENTS = 1;
 
 	/**
-	 * The feature id for the '<em><b>Linkaddress</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAGE__LINKADDRESS = 2;
-
-	/**
 	 * The number of structural features of the '<em>Page</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE_FEATURE_COUNT = 3;
+	int PAGE_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Page</em>' class.
@@ -223,22 +214,13 @@ public interface BasicwebsitePackage extends EPackage {
 	int PARAGRAPH__TEXT = PAGE_CONTENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Linkaddress</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAGRAPH__LINKADDRESS = PAGE_CONTENT_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>Paragraph</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAGRAPH_FEATURE_COUNT = PAGE_CONTENT_FEATURE_COUNT + 2;
+	int PARAGRAPH_FEATURE_COUNT = PAGE_CONTENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Paragraph</em>' class.
@@ -324,25 +306,25 @@ public interface BasicwebsitePackage extends EPackage {
 	int SECTION__NAME = PAGE_CONTENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Paragraphs</b></em>' reference list.
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SECTION__PARAGRAPHS = PAGE_CONTENT_FEATURE_COUNT + 0;
+	int SECTION__TITLE = PAGE_CONTENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Buttons</b></em>' reference list.
+	 * The feature id for the '<em><b>Paragraphs</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SECTION__BUTTONS = PAGE_CONTENT_FEATURE_COUNT + 1;
+	int SECTION__PARAGRAPHS = PAGE_CONTENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Links</b></em>' reference list.
+	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -351,31 +333,31 @@ public interface BasicwebsitePackage extends EPackage {
 	int SECTION__LINKS = PAGE_CONTENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Sub Sections</b></em>' reference list.
+	 * The feature id for the '<em><b>Sections</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SECTION__SUB_SECTIONS = PAGE_CONTENT_FEATURE_COUNT + 3;
+	int SECTION__SECTIONS = PAGE_CONTENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Images</b></em>' reference list.
+	 * The feature id for the '<em><b>Buttons</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SECTION__IMAGES = PAGE_CONTENT_FEATURE_COUNT + 4;
+	int SECTION__BUTTONS = PAGE_CONTENT_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * The feature id for the '<em><b>Images</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SECTION__TITLE = PAGE_CONTENT_FEATURE_COUNT + 5;
+	int SECTION__IMAGES = PAGE_CONTENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Section</em>' class.
@@ -452,22 +434,13 @@ public interface BasicwebsitePackage extends EPackage {
 	int LINK__NAME = PAGE_CONTENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Address</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK__ADDRESS = PAGE_CONTENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The number of structural features of the '<em>Link</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_FEATURE_COUNT = PAGE_CONTENT_FEATURE_COUNT + 1;
+	int LINK_FEATURE_COUNT = PAGE_CONTENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Link</em>' class.
@@ -590,15 +563,6 @@ public interface BasicwebsitePackage extends EPackage {
 	int PAGE_LINK__NAME = LINK__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Address</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAGE_LINK__ADDRESS = LINK__ADDRESS;
-
-	/**
 	 * The feature id for the '<em><b>Page</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -643,15 +607,6 @@ public interface BasicwebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int PARAGRAPH_LINK__NAME = LINK__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Address</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAGRAPH_LINK__ADDRESS = LINK__ADDRESS;
 
 	/**
 	 * The feature id for the '<em><b>Paragraph</b></em>' reference.
@@ -706,7 +661,7 @@ public interface BasicwebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_LINK__ADDRESS = LINK__ADDRESS;
+	int EXTERNAL_LINK__ADDRESS = LINK_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>External Link</em>' class.
@@ -715,7 +670,7 @@ public interface BasicwebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_LINK_FEATURE_COUNT = LINK_FEATURE_COUNT + 0;
+	int EXTERNAL_LINK_FEATURE_COUNT = LINK_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>External Link</em>' class.
@@ -791,17 +746,6 @@ public interface BasicwebsitePackage extends EPackage {
 	EReference getPage_Pagecontents();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.sirius.sample.basicwebsite.Page#getLinkaddress <em>Linkaddress</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Linkaddress</em>'.
-	 * @see org.eclipse.sirius.sample.basicwebsite.Page#getLinkaddress()
-	 * @see #getPage()
-	 * @generated
-	 */
-	EAttribute getPage_Linkaddress();
-
-	/**
 	 * Returns the meta object for class '{@link org.eclipse.sirius.sample.basicwebsite.Paragraph <em>Paragraph</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -821,17 +765,6 @@ public interface BasicwebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getParagraph_Text();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.sirius.sample.basicwebsite.Paragraph#getLinkaddress <em>Linkaddress</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Linkaddress</em>'.
-	 * @see org.eclipse.sirius.sample.basicwebsite.Paragraph#getLinkaddress()
-	 * @see #getParagraph()
-	 * @generated
-	 */
-	EAttribute getParagraph_Linkaddress();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.sirius.sample.basicwebsite.Image <em>Image</em>}'.
@@ -876,21 +809,10 @@ public interface BasicwebsitePackage extends EPackage {
 	EClass getSection();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.eclipse.sirius.sample.basicwebsite.Section#getParagraphs <em>Paragraphs</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.sirius.sample.basicwebsite.Section#getButtons <em>Buttons</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Paragraphs</em>'.
-	 * @see org.eclipse.sirius.sample.basicwebsite.Section#getParagraphs()
-	 * @see #getSection()
-	 * @generated
-	 */
-	EReference getSection_Paragraphs();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.eclipse.sirius.sample.basicwebsite.Section#getButtons <em>Buttons</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Buttons</em>'.
+	 * @return the meta object for the containment reference list '<em>Buttons</em>'.
 	 * @see org.eclipse.sirius.sample.basicwebsite.Section#getButtons()
 	 * @see #getSection()
 	 * @generated
@@ -898,10 +820,10 @@ public interface BasicwebsitePackage extends EPackage {
 	EReference getSection_Buttons();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.eclipse.sirius.sample.basicwebsite.Section#getLinks <em>Links</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.sirius.sample.basicwebsite.Section#getLinks <em>Links</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Links</em>'.
+	 * @return the meta object for the containment reference list '<em>Links</em>'.
 	 * @see org.eclipse.sirius.sample.basicwebsite.Section#getLinks()
 	 * @see #getSection()
 	 * @generated
@@ -909,21 +831,21 @@ public interface BasicwebsitePackage extends EPackage {
 	EReference getSection_Links();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.eclipse.sirius.sample.basicwebsite.Section#getSubSections <em>Sub Sections</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.sirius.sample.basicwebsite.Section#getSections <em>Sections</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Sub Sections</em>'.
-	 * @see org.eclipse.sirius.sample.basicwebsite.Section#getSubSections()
+	 * @return the meta object for the containment reference list '<em>Sections</em>'.
+	 * @see org.eclipse.sirius.sample.basicwebsite.Section#getSections()
 	 * @see #getSection()
 	 * @generated
 	 */
-	EReference getSection_SubSections();
+	EReference getSection_Sections();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.eclipse.sirius.sample.basicwebsite.Section#getImages <em>Images</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.sirius.sample.basicwebsite.Section#getImages <em>Images</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Images</em>'.
+	 * @return the meta object for the containment reference list '<em>Images</em>'.
 	 * @see org.eclipse.sirius.sample.basicwebsite.Section#getImages()
 	 * @see #getSection()
 	 * @generated
@@ -940,6 +862,17 @@ public interface BasicwebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSection_Title();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.sirius.sample.basicwebsite.Section#getParagraphs <em>Paragraphs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Paragraphs</em>'.
+	 * @see org.eclipse.sirius.sample.basicwebsite.Section#getParagraphs()
+	 * @see #getSection()
+	 * @generated
+	 */
+	EReference getSection_Paragraphs();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.sirius.sample.basicwebsite.Button <em>Button</em>}'.
@@ -960,17 +893,6 @@ public interface BasicwebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getLink();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.sirius.sample.basicwebsite.Link#getAddress <em>Address</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Address</em>'.
-	 * @see org.eclipse.sirius.sample.basicwebsite.Link#getAddress()
-	 * @see #getLink()
-	 * @generated
-	 */
-	EAttribute getLink_Address();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.sirius.sample.basicwebsite.PageContent <em>Page Content</em>}'.
@@ -1088,6 +1010,17 @@ public interface BasicwebsitePackage extends EPackage {
 	EClass getExternalLink();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.sirius.sample.basicwebsite.ExternalLink#getAddress <em>Address</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Address</em>'.
+	 * @see org.eclipse.sirius.sample.basicwebsite.ExternalLink#getAddress()
+	 * @see #getExternalLink()
+	 * @generated
+	 */
+	EAttribute getExternalLink_Address();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1163,14 +1096,6 @@ public interface BasicwebsitePackage extends EPackage {
 		EReference PAGE__PAGECONTENTS = eINSTANCE.getPage_Pagecontents();
 
 		/**
-		 * The meta object literal for the '<em><b>Linkaddress</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PAGE__LINKADDRESS = eINSTANCE.getPage_Linkaddress();
-
-		/**
 		 * The meta object literal for the '{@link org.eclipse.sirius.sample.basicwebsite.impl.ParagraphImpl <em>Paragraph</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1187,14 +1112,6 @@ public interface BasicwebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PARAGRAPH__TEXT = eINSTANCE.getParagraph_Text();
-
-		/**
-		 * The meta object literal for the '<em><b>Linkaddress</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PARAGRAPH__LINKADDRESS = eINSTANCE.getParagraph_Linkaddress();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.sirius.sample.basicwebsite.impl.ImageImpl <em>Image</em>}' class.
@@ -1233,15 +1150,7 @@ public interface BasicwebsitePackage extends EPackage {
 		EClass SECTION = eINSTANCE.getSection();
 
 		/**
-		 * The meta object literal for the '<em><b>Paragraphs</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SECTION__PARAGRAPHS = eINSTANCE.getSection_Paragraphs();
-
-		/**
-		 * The meta object literal for the '<em><b>Buttons</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Buttons</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1249,7 +1158,7 @@ public interface BasicwebsitePackage extends EPackage {
 		EReference SECTION__BUTTONS = eINSTANCE.getSection_Buttons();
 
 		/**
-		 * The meta object literal for the '<em><b>Links</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Links</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1257,15 +1166,15 @@ public interface BasicwebsitePackage extends EPackage {
 		EReference SECTION__LINKS = eINSTANCE.getSection_Links();
 
 		/**
-		 * The meta object literal for the '<em><b>Sub Sections</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Sections</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SECTION__SUB_SECTIONS = eINSTANCE.getSection_SubSections();
+		EReference SECTION__SECTIONS = eINSTANCE.getSection_Sections();
 
 		/**
-		 * The meta object literal for the '<em><b>Images</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Images</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1279,6 +1188,14 @@ public interface BasicwebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SECTION__TITLE = eINSTANCE.getSection_Title();
+
+		/**
+		 * The meta object literal for the '<em><b>Paragraphs</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SECTION__PARAGRAPHS = eINSTANCE.getSection_Paragraphs();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.sirius.sample.basicwebsite.impl.ButtonImpl <em>Button</em>}' class.
@@ -1299,14 +1216,6 @@ public interface BasicwebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EClass LINK = eINSTANCE.getLink();
-
-		/**
-		 * The meta object literal for the '<em><b>Address</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute LINK__ADDRESS = eINSTANCE.getLink_Address();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.sirius.sample.basicwebsite.impl.PageContentImpl <em>Page Content</em>}' class.
@@ -1407,6 +1316,14 @@ public interface BasicwebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EClass EXTERNAL_LINK = eINSTANCE.getExternalLink();
+
+		/**
+		 * The meta object literal for the '<em><b>Address</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EXTERNAL_LINK__ADDRESS = eINSTANCE.getExternalLink_Address();
 
 	}
 

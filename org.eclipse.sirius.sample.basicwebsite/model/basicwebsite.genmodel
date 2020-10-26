@@ -18,28 +18,24 @@
     <genClasses ecoreClass="basicwebsite.ecore#//Page">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute basicwebsite.ecore#//Page/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference basicwebsite.ecore#//Page/pagecontents"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute basicwebsite.ecore#//Page/linkaddress"/>
     </genClasses>
     <genClasses ecoreClass="basicwebsite.ecore#//Paragraph">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute basicwebsite.ecore#//Paragraph/text"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute basicwebsite.ecore#//Paragraph/linkaddress"/>
     </genClasses>
     <genClasses ecoreClass="basicwebsite.ecore#//Image">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute basicwebsite.ecore#//Image/src"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute basicwebsite.ecore#//Image/alt"/>
     </genClasses>
     <genClasses ecoreClass="basicwebsite.ecore#//Section">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference basicwebsite.ecore#//Section/paragraphs"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference basicwebsite.ecore#//Section/buttons"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference basicwebsite.ecore#//Section/links"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference basicwebsite.ecore#//Section/subSections"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference basicwebsite.ecore#//Section/images"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute basicwebsite.ecore#//Section/title"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference basicwebsite.ecore#//Section/paragraphs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference basicwebsite.ecore#//Section/links"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference basicwebsite.ecore#//Section/sections"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference basicwebsite.ecore#//Section/buttons"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference basicwebsite.ecore#//Section/images"/>
     </genClasses>
     <genClasses ecoreClass="basicwebsite.ecore#//Button"/>
-    <genClasses ecoreClass="basicwebsite.ecore#//Link">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute basicwebsite.ecore#//Link/address"/>
-    </genClasses>
+    <genClasses ecoreClass="basicwebsite.ecore#//Link"/>
     <genClasses ecoreClass="basicwebsite.ecore#//PageContent">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute basicwebsite.ecore#//PageContent/name"/>
     </genClasses>
@@ -55,6 +51,8 @@
     <genClasses ecoreClass="basicwebsite.ecore#//ParagraphLink">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference basicwebsite.ecore#//ParagraphLink/paragraph"/>
     </genClasses>
-    <genClasses ecoreClass="basicwebsite.ecore#//ExternalLink"/>
+    <genClasses ecoreClass="basicwebsite.ecore#//ExternalLink">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute basicwebsite.ecore#//ExternalLink/address"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

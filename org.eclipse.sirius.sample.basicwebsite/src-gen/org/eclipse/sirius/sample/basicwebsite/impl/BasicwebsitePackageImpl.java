@@ -246,15 +246,6 @@ public class BasicwebsitePackageImpl extends EPackageImpl implements Basicwebsit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPage_Linkaddress() {
-		return (EAttribute) pageEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getParagraph() {
 		return paragraphEClass;
 	}
@@ -266,15 +257,6 @@ public class BasicwebsitePackageImpl extends EPackageImpl implements Basicwebsit
 	 */
 	public EAttribute getParagraph_Text() {
 		return (EAttribute) paragraphEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getParagraph_Linkaddress() {
-		return (EAttribute) paragraphEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -318,17 +300,8 @@ public class BasicwebsitePackageImpl extends EPackageImpl implements Basicwebsit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSection_Paragraphs() {
-		return (EReference) sectionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getSection_Buttons() {
-		return (EReference) sectionEClass.getEStructuralFeatures().get(1);
+		return (EReference) sectionEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -345,7 +318,7 @@ public class BasicwebsitePackageImpl extends EPackageImpl implements Basicwebsit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSection_SubSections() {
+	public EReference getSection_Sections() {
 		return (EReference) sectionEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -355,7 +328,7 @@ public class BasicwebsitePackageImpl extends EPackageImpl implements Basicwebsit
 	 * @generated
 	 */
 	public EReference getSection_Images() {
-		return (EReference) sectionEClass.getEStructuralFeatures().get(4);
+		return (EReference) sectionEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -364,7 +337,16 @@ public class BasicwebsitePackageImpl extends EPackageImpl implements Basicwebsit
 	 * @generated
 	 */
 	public EAttribute getSection_Title() {
-		return (EAttribute) sectionEClass.getEStructuralFeatures().get(5);
+		return (EAttribute) sectionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSection_Paragraphs() {
+		return (EReference) sectionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -383,15 +365,6 @@ public class BasicwebsitePackageImpl extends EPackageImpl implements Basicwebsit
 	 */
 	public EClass getLink() {
 		return linkEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getLink_Address() {
-		return (EAttribute) linkEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -498,6 +471,15 @@ public class BasicwebsitePackageImpl extends EPackageImpl implements Basicwebsit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getExternalLink_Address() {
+		return (EAttribute) externalLinkEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public BasicwebsiteFactory getBasicwebsiteFactory() {
 		return (BasicwebsiteFactory) getEFactoryInstance();
 	}
@@ -529,28 +511,25 @@ public class BasicwebsitePackageImpl extends EPackageImpl implements Basicwebsit
 		pageEClass = createEClass(PAGE);
 		createEAttribute(pageEClass, PAGE__NAME);
 		createEReference(pageEClass, PAGE__PAGECONTENTS);
-		createEAttribute(pageEClass, PAGE__LINKADDRESS);
 
 		paragraphEClass = createEClass(PARAGRAPH);
 		createEAttribute(paragraphEClass, PARAGRAPH__TEXT);
-		createEAttribute(paragraphEClass, PARAGRAPH__LINKADDRESS);
 
 		imageEClass = createEClass(IMAGE);
 		createEAttribute(imageEClass, IMAGE__SRC);
 		createEAttribute(imageEClass, IMAGE__ALT);
 
 		sectionEClass = createEClass(SECTION);
-		createEReference(sectionEClass, SECTION__PARAGRAPHS);
-		createEReference(sectionEClass, SECTION__BUTTONS);
-		createEReference(sectionEClass, SECTION__LINKS);
-		createEReference(sectionEClass, SECTION__SUB_SECTIONS);
-		createEReference(sectionEClass, SECTION__IMAGES);
 		createEAttribute(sectionEClass, SECTION__TITLE);
+		createEReference(sectionEClass, SECTION__PARAGRAPHS);
+		createEReference(sectionEClass, SECTION__LINKS);
+		createEReference(sectionEClass, SECTION__SECTIONS);
+		createEReference(sectionEClass, SECTION__BUTTONS);
+		createEReference(sectionEClass, SECTION__IMAGES);
 
 		buttonEClass = createEClass(BUTTON);
 
 		linkEClass = createEClass(LINK);
-		createEAttribute(linkEClass, LINK__ADDRESS);
 
 		pageContentEClass = createEClass(PAGE_CONTENT);
 		createEAttribute(pageContentEClass, PAGE_CONTENT__NAME);
@@ -568,6 +547,7 @@ public class BasicwebsitePackageImpl extends EPackageImpl implements Basicwebsit
 		createEReference(paragraphLinkEClass, PARAGRAPH_LINK__PARAGRAPH);
 
 		externalLinkEClass = createEClass(EXTERNAL_LINK);
+		createEAttribute(externalLinkEClass, EXTERNAL_LINK__ADDRESS);
 	}
 
 	/**
@@ -624,16 +604,11 @@ public class BasicwebsitePackageImpl extends EPackageImpl implements Basicwebsit
 		initEReference(getPage_Pagecontents(), this.getPageContent(), null, "pagecontents", null, 0, -1, Page.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPage_Linkaddress(), ecorePackage.getEString(), "linkaddress", null, 0, 1, Page.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(paragraphEClass, Paragraph.class, "Paragraph", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getParagraph_Text(), ecorePackage.getEString(), "text", null, 0, 1, Paragraph.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getParagraph_Linkaddress(), ecorePackage.getEString(), "linkaddress", null, 0, 1,
-				Paragraph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(imageEClass, Image.class, "Image", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getImage_Src(), ecorePackage.getEString(), "src", null, 0, 1, Image.class, !IS_TRANSIENT,
@@ -642,29 +617,27 @@ public class BasicwebsitePackageImpl extends EPackageImpl implements Basicwebsit
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sectionEClass, Section.class, "Section", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSection_Paragraphs(), this.getParagraph(), null, "paragraphs", null, 0, -1, Section.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSection_Buttons(), this.getButton(), null, "buttons", null, 0, -1, Section.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSection_Links(), this.getLink(), null, "links", null, 0, -1, Section.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-		initEReference(getSection_SubSections(), this.getSection(), null, "subSections", null, 0, -1, Section.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSection_Images(), this.getImage(), null, "images", null, 0, -1, Section.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
 		initEAttribute(getSection_Title(), ecorePackage.getEString(), "title", null, 0, 1, Section.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSection_Paragraphs(), this.getParagraph(), null, "paragraphs", null, 0, -1, Section.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSection_Links(), this.getLink(), null, "links", null, 0, -1, Section.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getSection_Sections(), this.getSection(), null, "sections", null, 0, -1, Section.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSection_Buttons(), this.getButton(), null, "buttons", null, 0, -1, Section.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSection_Images(), this.getImage(), null, "images", null, 0, -1, Section.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(buttonEClass, Button.class, "Button", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(linkEClass, Link.class, "Link", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getLink_Address(), ecorePackage.getEString(), "address", null, 0, 1, Link.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(pageContentEClass, PageContent.class, "PageContent", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -697,6 +670,8 @@ public class BasicwebsitePackageImpl extends EPackageImpl implements Basicwebsit
 
 		initEClass(externalLinkEClass, ExternalLink.class, "ExternalLink", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getExternalLink_Address(), ecorePackage.getEString(), "address", null, 0, 1, ExternalLink.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

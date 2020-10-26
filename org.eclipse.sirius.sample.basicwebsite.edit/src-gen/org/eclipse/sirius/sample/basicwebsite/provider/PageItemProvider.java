@@ -57,7 +57,6 @@ public class PageItemProvider extends ItemProviderAdapter implements IEditingDom
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addLinkaddressPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -74,22 +73,6 @@ public class PageItemProvider extends ItemProviderAdapter implements IEditingDom
 						getResourceLocator(), getString("_UI_Page_name_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_Page_name_feature", "_UI_Page_type"),
 						BasicwebsitePackage.Literals.PAGE__NAME, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Linkaddress feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addLinkaddressPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Page_linkaddress_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Page_linkaddress_feature",
-								"_UI_Page_type"),
-						BasicwebsitePackage.Literals.PAGE__LINKADDRESS, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -170,7 +153,6 @@ public class PageItemProvider extends ItemProviderAdapter implements IEditingDom
 
 		switch (notification.getFeatureID(Page.class)) {
 		case BasicwebsitePackage.PAGE__NAME:
-		case BasicwebsitePackage.PAGE__LINKADDRESS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case BasicwebsitePackage.PAGE__PAGECONTENTS:

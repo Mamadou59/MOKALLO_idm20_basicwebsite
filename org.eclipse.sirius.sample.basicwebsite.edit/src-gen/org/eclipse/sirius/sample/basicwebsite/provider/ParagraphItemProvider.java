@@ -45,7 +45,6 @@ public class ParagraphItemProvider extends PageContentItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addTextPropertyDescriptor(object);
-			addLinkaddressPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -63,22 +62,6 @@ public class ParagraphItemProvider extends PageContentItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_Paragraph_text_feature",
 								"_UI_Paragraph_type"),
 						BasicwebsitePackage.Literals.PARAGRAPH__TEXT, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Linkaddress feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addLinkaddressPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Paragraph_linkaddress_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Paragraph_linkaddress_feature",
-								"_UI_Paragraph_type"),
-						BasicwebsitePackage.Literals.PARAGRAPH__LINKADDRESS, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -129,7 +112,6 @@ public class ParagraphItemProvider extends PageContentItemProvider {
 
 		switch (notification.getFeatureID(Paragraph.class)) {
 		case BasicwebsitePackage.PARAGRAPH__TEXT:
-		case BasicwebsitePackage.PARAGRAPH__LINKADDRESS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

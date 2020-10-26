@@ -20,7 +20,6 @@ import org.eclipse.sirius.sample.basicwebsite.Paragraph;
  * </p>
  * <ul>
  *   <li>{@link org.eclipse.sirius.sample.basicwebsite.impl.ParagraphImpl#getText <em>Text</em>}</li>
- *   <li>{@link org.eclipse.sirius.sample.basicwebsite.impl.ParagraphImpl#getLinkaddress <em>Linkaddress</em>}</li>
  * </ul>
  *
  * @generated
@@ -45,26 +44,6 @@ public class ParagraphImpl extends PageContentImpl implements Paragraph {
 	 * @ordered
 	 */
 	protected String text = TEXT_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getLinkaddress() <em>Linkaddress</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLinkaddress()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String LINKADDRESS_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getLinkaddress() <em>Linkaddress</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLinkaddress()
-	 * @generated
-	 * @ordered
-	 */
-	protected String linkaddress = LINKADDRESS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -111,35 +90,11 @@ public class ParagraphImpl extends PageContentImpl implements Paragraph {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getLinkaddress() {
-		return linkaddress;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setLinkaddress(String newLinkaddress) {
-		String oldLinkaddress = linkaddress;
-		linkaddress = newLinkaddress;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasicwebsitePackage.PARAGRAPH__LINKADDRESS,
-					oldLinkaddress, linkaddress));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case BasicwebsitePackage.PARAGRAPH__TEXT:
 			return getText();
-		case BasicwebsitePackage.PARAGRAPH__LINKADDRESS:
-			return getLinkaddress();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -154,9 +109,6 @@ public class ParagraphImpl extends PageContentImpl implements Paragraph {
 		switch (featureID) {
 		case BasicwebsitePackage.PARAGRAPH__TEXT:
 			setText((String) newValue);
-			return;
-		case BasicwebsitePackage.PARAGRAPH__LINKADDRESS:
-			setLinkaddress((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -173,9 +125,6 @@ public class ParagraphImpl extends PageContentImpl implements Paragraph {
 		case BasicwebsitePackage.PARAGRAPH__TEXT:
 			setText(TEXT_EDEFAULT);
 			return;
-		case BasicwebsitePackage.PARAGRAPH__LINKADDRESS:
-			setLinkaddress(LINKADDRESS_EDEFAULT);
-			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -190,8 +139,6 @@ public class ParagraphImpl extends PageContentImpl implements Paragraph {
 		switch (featureID) {
 		case BasicwebsitePackage.PARAGRAPH__TEXT:
 			return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
-		case BasicwebsitePackage.PARAGRAPH__LINKADDRESS:
-			return LINKADDRESS_EDEFAULT == null ? linkaddress != null : !LINKADDRESS_EDEFAULT.equals(linkaddress);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -209,8 +156,6 @@ public class ParagraphImpl extends PageContentImpl implements Paragraph {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (text: ");
 		result.append(text);
-		result.append(", linkaddress: ");
-		result.append(linkaddress);
 		result.append(')');
 		return result.toString();
 	}

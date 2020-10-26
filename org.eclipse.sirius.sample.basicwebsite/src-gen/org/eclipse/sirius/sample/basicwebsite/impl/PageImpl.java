@@ -32,7 +32,6 @@ import org.eclipse.sirius.sample.basicwebsite.PageContent;
  * <ul>
  *   <li>{@link org.eclipse.sirius.sample.basicwebsite.impl.PageImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.sirius.sample.basicwebsite.impl.PageImpl#getPagecontents <em>Pagecontents</em>}</li>
- *   <li>{@link org.eclipse.sirius.sample.basicwebsite.impl.PageImpl#getLinkaddress <em>Linkaddress</em>}</li>
  * </ul>
  *
  * @generated
@@ -67,26 +66,6 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	 * @ordered
 	 */
 	protected EList<PageContent> pagecontents;
-
-	/**
-	 * The default value of the '{@link #getLinkaddress() <em>Linkaddress</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLinkaddress()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String LINKADDRESS_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getLinkaddress() <em>Linkaddress</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLinkaddress()
-	 * @generated
-	 * @ordered
-	 */
-	protected String linkaddress = LINKADDRESS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -146,28 +125,6 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getLinkaddress() {
-		return linkaddress;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setLinkaddress(String newLinkaddress) {
-		String oldLinkaddress = linkaddress;
-		linkaddress = newLinkaddress;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasicwebsitePackage.PAGE__LINKADDRESS, oldLinkaddress,
-					linkaddress));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -189,8 +146,6 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 			return getName();
 		case BasicwebsitePackage.PAGE__PAGECONTENTS:
 			return getPagecontents();
-		case BasicwebsitePackage.PAGE__LINKADDRESS:
-			return getLinkaddress();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -211,9 +166,6 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 			getPagecontents().clear();
 			getPagecontents().addAll((Collection<? extends PageContent>) newValue);
 			return;
-		case BasicwebsitePackage.PAGE__LINKADDRESS:
-			setLinkaddress((String) newValue);
-			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -232,9 +184,6 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 		case BasicwebsitePackage.PAGE__PAGECONTENTS:
 			getPagecontents().clear();
 			return;
-		case BasicwebsitePackage.PAGE__LINKADDRESS:
-			setLinkaddress(LINKADDRESS_EDEFAULT);
-			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -251,8 +200,6 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case BasicwebsitePackage.PAGE__PAGECONTENTS:
 			return pagecontents != null && !pagecontents.isEmpty();
-		case BasicwebsitePackage.PAGE__LINKADDRESS:
-			return LINKADDRESS_EDEFAULT == null ? linkaddress != null : !LINKADDRESS_EDEFAULT.equals(linkaddress);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -270,8 +217,6 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", linkaddress: ");
-		result.append(linkaddress);
 		result.append(')');
 		return result.toString();
 	}

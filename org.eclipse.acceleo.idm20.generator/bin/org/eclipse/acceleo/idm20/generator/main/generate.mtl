@@ -14,6 +14,64 @@
 [for (aPage : Page | aWebsite.pages)]
 	[generatePage(aPage)/]
 [/for]
+[comment]For CSS file[/comment]
+[file ('page.css', false, 'UTF-8')]
+body {
+	background-color: ivory;
+	margin:1 25%;
+	text-align: center;
+}
+h1{
+	color:#aa4057;
+	background-color:#4057aa;
+	margin: 0 25%; 
+	border-radius: 10px;
+}
+
+h2  {
+	color:#aa5e40;
+	background-color:#4057aa;
+	border-radius: 10px;
+}
+
+.button{
+	margin: 1%;
+	background-color: darkgray;
+}
+a, a:hover {
+  color: #000;
+  text-decoration: none;
+	
+}
+.paragraphLink{
+	border: solid 1px brown;
+	padding: 3px;
+	margin: 3pt;
+	background-color: greenyellow;
+	border-radius: 10px;
+}
+.pageLink{
+	border: solid 1px brown;
+	padding: 3px;
+	margin: 3pt;
+	background-color: goldenrod;
+	border-radius: 10px;
+}
+.externalLink{
+	border: solid 1px brown;
+	padding: 3px;
+	margin: 3pt;
+	background-color: darkseagreen;
+	border-radius: 10px;
+}
+.section{
+	border: solid 2px rebeccapurple;
+	width: 46%;
+	margin-left: 25%;
+	margin-bottom: 1%;
+	padding: 2%
+}
+[/file]
 [/template]
 
 [template public generatePage(aPage : Page)]
@@ -21,6 +79,7 @@
 <!DOCTYPE html>
 <html>
  	<head>
+		<link href="page.css" rel="stylesheet" media="all" type="text/css">
 		<title>[aPage.name/]</title>
 	</head>
   	<body>

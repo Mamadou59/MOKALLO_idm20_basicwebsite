@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <basicwebsite:WebSite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:basicwebsite="http://www.example.org/basicwebsite" name="My website">
   <pages name="index">
-    <pagecontents xsi:type="basicwebsite:Image"/>
+    <pagecontents xsi:type="basicwebsite:Image" name="entete" src="../images/mokallo.png" alt="Une image du nom du groupe"/>
     <pagecontents xsi:type="basicwebsite:Paragraph" name="introduction" text="Ceci est l'introduction de la page index"/>
     <pagecontents xsi:type="basicwebsite:PageButton" name="Goto page1" page="//@pages.1"/>
     <pagecontents xsi:type="basicwebsite:ParagraphButton" name="Goto introduction" paragraph="//@pages.0/@pagecontents.1"/>
     <pagecontents xsi:type="basicwebsite:PageButton" name="Goto page2" page="//@pages.2"/>
   </pages>
   <pages name="page1">
-    <pagecontents xsi:type="basicwebsite:Paragraph" name="paragraph1-1" text="Ceci ets le texte du premier paragraph de la page1"/>
+    <pagecontents xsi:type="basicwebsite:Paragraph" name="paragraph1-1" text="Ceci est le texte du premier paragraph de la page1"/>
     <pagecontents xsi:type="basicwebsite:Section" name="section1-1" title="Première section">
       <paragraphs name="paragraph1-1-1" text="Ceci est le texte du premier paragraph de la section"/>
       <links xsi:type="basicwebsite:ParagraphLink" name="paragraph1-1" paragraph="//@pages.1/@pagecontents.0"/>

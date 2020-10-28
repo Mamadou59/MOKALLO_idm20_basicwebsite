@@ -5,6 +5,7 @@
     <pagecontents xsi:type="basicwebsite:Paragraph" name="introduction" text="Ceci est l'introduction de la page index"/>
     <pagecontents xsi:type="basicwebsite:PageButton" name="Goto page1" page="//@pages.1"/>
     <pagecontents xsi:type="basicwebsite:ParagraphButton" name="Goto introduction" paragraph="//@pages.0/@pagecontents.1"/>
+    <pagecontents xsi:type="basicwebsite:PageButton" name="Goto page2" page="//@pages.2"/>
   </pages>
   <pages name="page1">
     <pagecontents xsi:type="basicwebsite:Paragraph" name="paragraph1-1" text="Ceci ets le texte du premier paragraph de la page1"/>
@@ -12,7 +13,7 @@
       <paragraphs name="paragraph1-1-1" text="Ceci est le texte du premier paragraph de la section"/>
       <links xsi:type="basicwebsite:ParagraphLink" name="paragraph1-1" paragraph="//@pages.1/@pagecontents.0"/>
       <links xsi:type="basicwebsite:PageLink" name="Goto page2" page="//@pages.2"/>
-      <sections name="section1-1-1" title="Première section de la seconde section">
+      <sections name="section1-1-1" title="Sous section de la première section">
         <buttons xsi:type="basicwebsite:PageButton" name="Return to index" page="//@pages.0"/>
         <buttons xsi:type="basicwebsite:ParagraphButton" name="Go to paragraph1-2" paragraph="//@pages.1/@pagecontents.2"/>
       </sections>

@@ -1,0 +1,1697 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
+  <mtl:Module name="generate" nsURI="org::eclipse::acceleo::idm20::generator::main::generate" startHeaderPosition="83" endHeaderPosition="218">
+    <documentation xsi:type="mtl:ModuleDocumentation">
+      <body startPosition="32" endPosition="80" value="&#xA;The documentation of the module generate.&#xA;&#xA;"/>
+    </documentation>
+    <input>
+      <takesTypesFrom href="http://www.example.org/basicwebsite#/"/>
+    </input>
+    <ownedModuleElement xsi:type="mtl:Template" name="generateElement" visibility="Public" main="true">
+      <body xsi:type="mtl:ForBlock">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;"/>
+        <body xsi:type="mtl:TemplateInvocation" definition="/0/generatePage">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="aPage" referredVariable="/0/generateElement/%/aPage">
+            <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Page"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+        <loopVariable name="aPage">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Page"/>
+        </loopVariable>
+        <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/6/OrderedSet(Page)">
+          <source xsi:type="ocl.ecore:VariableExp" name="aWebsite" referredVariable="/0/generateElement/aWebsite">
+            <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//WebSite"/>
+          </source>
+          <referredProperty xsi:type="ecore:EReference" href="http://www.example.org/basicwebsite#//WebSite/pages"/>
+        </iterSet>
+      </body>
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="145" endPosition="218" value="&#xA;The documentation of the template generateElement.&#xA;@param aPage&#xA;&#xA;"/>
+        <parametersDocumentation name="aPage">
+          <body value=""/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="aWebsite">
+        <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//WebSite"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="generatePage" visibility="Public">
+      <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;!DOCTYPE html>&#xA;&lt;html>&#xA; &#x9;&lt;head>&#xA;&#x9;&#x9;&lt;title>"/>
+        <body xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="aPage" referredVariable="/0/generatePage/aPage">
+            <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Page"/>
+          </source>
+          <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/basicwebsite#//Page/name"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;/title>&#xA;&#x9;&lt;/head>&#xA;  &#x9;&lt;body>&#xA;  &#x9;&#x9;&lt;h1> "/>
+        <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/toUpperFirst">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="aPage" referredVariable="/0/generatePage/aPage">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Page"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/basicwebsite#//Page/name"/>
+          </source>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" &lt;/h1>&#xA;"/>
+        <body xsi:type="mtl:ForBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#x9;"/>
+          <body xsi:type="mtl:TemplateInvocation" definition="/0/generatePageContent">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="pageContent" referredVariable="/0/generatePage/%/%.5/pageContent">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//PageContent"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+          <loopVariable name="pageContent">
+            <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//PageContent"/>
+          </loopVariable>
+          <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/6/OrderedSet(PageContent)">
+            <source xsi:type="ocl.ecore:VariableExp" name="aPage" referredVariable="/0/generatePage/aPage">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Page"/>
+            </source>
+            <referredProperty xsi:type="ecore:EReference" href="http://www.example.org/basicwebsite#//Page/pagecontents"/>
+          </iterSet>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&lt;/body>&#xA;&lt;/html>&#xA;"/>
+        <fileUrl xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="aPage" referredVariable="/0/generatePage/aPage">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Page"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/basicwebsite#//Page/name"/>
+          </source>
+          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".html">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </argument>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/concat"/>
+        </fileUrl>
+        <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </charset>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+      <parameter name="aPage">
+        <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Page"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="generatePageContent" visibility="Public">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;// TODO"/>
+      <parameter name="aPageContent">
+        <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//PageContent"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="generatePageContent" visibility="Public">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;p id='"/>
+      <body xsi:type="ocl.ecore:OperationCallExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="aParagraph" referredVariable="/0/generatePageContent.1/aParagraph">
+            <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Paragraph"/>
+          </source>
+          <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/basicwebsite#//PageContent/name"/>
+        </source>
+        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/toLower"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="' class='paragraph'> "/>
+      <body xsi:type="ocl.ecore:PropertyCallExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="ocl.ecore:VariableExp" name="aParagraph" referredVariable="/0/generatePageContent.1/aParagraph">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Paragraph"/>
+        </source>
+        <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/basicwebsite#//Paragraph/text"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" &lt;/p>"/>
+      <parameter name="aParagraph">
+        <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Paragraph"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="generatePageContent" visibility="Public">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;section id='"/>
+      <body xsi:type="ocl.ecore:OperationCallExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="aSection" referredVariable="/0/generatePageContent.2/aSection">
+            <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Section"/>
+          </source>
+          <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/basicwebsite#//PageContent/name"/>
+        </source>
+        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/toLower"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="' class='section'> &#xA;&#x9;&lt;h2> "/>
+      <body xsi:type="ocl.ecore:PropertyCallExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="ocl.ecore:VariableExp" name="aSection" referredVariable="/0/generatePageContent.2/aSection">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Section"/>
+        </source>
+        <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/basicwebsite#//Section/title"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" &lt;/h2>&#xA;"/>
+      <body xsi:type="mtl:ForBlock">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;"/>
+        <body xsi:type="mtl:TemplateInvocation" definition="/0/generatePageContent">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="paragraph" referredVariable="/0/generatePageContent.2/%.5/paragraph">
+            <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Paragraph"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+        <loopVariable name="paragraph">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Paragraph"/>
+        </loopVariable>
+        <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/6/OrderedSet(Paragraph)">
+          <source xsi:type="ocl.ecore:VariableExp" name="aSection" referredVariable="/0/generatePageContent.2/aSection">
+            <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Section"/>
+          </source>
+          <referredProperty xsi:type="ecore:EReference" href="http://www.example.org/basicwebsite#//Section/paragraphs"/>
+        </iterSet>
+      </body>
+      <body xsi:type="mtl:ForBlock">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;"/>
+        <body xsi:type="mtl:TemplateInvocation" definition="/0/generatePageContent">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="section" referredVariable="/0/generatePageContent.2/%.6/section">
+            <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Section"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+        <loopVariable name="section">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Section"/>
+        </loopVariable>
+        <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/6/OrderedSet(Section)">
+          <source xsi:type="ocl.ecore:VariableExp" name="aSection" referredVariable="/0/generatePageContent.2/aSection">
+            <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Section"/>
+          </source>
+          <referredProperty xsi:type="ecore:EReference" href="http://www.example.org/basicwebsite#//Section/sections"/>
+        </iterSet>
+      </body>
+      <body xsi:type="mtl:ForBlock">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;"/>
+        <body xsi:type="mtl:TemplateInvocation" definition="/0/generatePageContent">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="aLink" referredVariable="/0/generatePageContent.2/%.7/aLink">
+            <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Link"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+        <loopVariable name="aLink">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Link"/>
+        </loopVariable>
+        <iterSet xsi:type="ocl.ecore:OperationCallExp" eType="/6/OrderedSet(Link)" referredOperation="/1/ecore_EObject_Class/eGet">
+          <source xsi:type="ocl.ecore:VariableExp" name="aSection" referredVariable="/0/generatePageContent.2/aSection">
+            <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Section"/>
+          </source>
+          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="links">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </argument>
+        </iterSet>
+      </body>
+      <body xsi:type="mtl:ForBlock">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;"/>
+        <body xsi:type="mtl:TemplateInvocation" definition="/0/generatePageContent">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="aButton" referredVariable="/0/generatePageContent.2/%.8/aButton">
+            <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Button"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+        <loopVariable name="aButton">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Button"/>
+        </loopVariable>
+        <iterSet xsi:type="ocl.ecore:OperationCallExp" eType="/6/OrderedSet(Button)" referredOperation="/1/ecore_EObject_Class/eGet">
+          <source xsi:type="ocl.ecore:VariableExp" name="aSection" referredVariable="/0/generatePageContent.2/aSection">
+            <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Section"/>
+          </source>
+          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="buttons">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </argument>
+        </iterSet>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;/section>"/>
+      <parameter name="aSection">
+        <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Section"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="generatePageContent" visibility="Public">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;Button class='button'> &lt;a href='#"/>
+      <body xsi:type="ocl.ecore:OperationCallExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/ecore_EObject_Class/eGet">
+            <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Paragraph"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="aParagraphButton" referredVariable="/0/generatePageContent.3/aParagraphButton">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//ParagraphButton"/>
+            </source>
+            <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="paragraph">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </argument>
+          </source>
+          <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/basicwebsite#//PageContent/name"/>
+        </source>
+        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/toLower"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="'>"/>
+      <body xsi:type="ocl.ecore:PropertyCallExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="ocl.ecore:VariableExp" name="aParagraphButton" referredVariable="/0/generatePageContent.3/aParagraphButton">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//ParagraphButton"/>
+        </source>
+        <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/basicwebsite#//PageContent/name"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;/a> &lt;/Button>"/>
+      <parameter name="aParagraphButton">
+        <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//ParagraphButton"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="generatePageContent" visibility="Public">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;Button class='button'> &lt;a href='"/>
+      <body xsi:type="ocl.ecore:OperationCallExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/ecore_EObject_Class/eGet">
+            <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Page"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="aPageButton" referredVariable="/0/generatePageContent.4/aPageButton">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//PageButton"/>
+            </source>
+            <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="page">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </argument>
+          </source>
+          <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/basicwebsite#//Page/name"/>
+        </source>
+        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".html">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </argument>
+        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/concat"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="'>"/>
+      <body xsi:type="ocl.ecore:PropertyCallExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="ocl.ecore:VariableExp" name="aPageButton" referredVariable="/0/generatePageContent.4/aPageButton">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//PageButton"/>
+        </source>
+        <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/basicwebsite#//PageContent/name"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;/a> &lt;/Button>"/>
+      <parameter name="aPageButton">
+        <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//PageButton"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="generatePageContent" visibility="Public">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;a class='pageLink' href='"/>
+      <body xsi:type="ocl.ecore:OperationCallExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/ecore_EObject_Class/eGet">
+            <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Page"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="aPageLink" referredVariable="/0/generatePageContent.5/aPageLink">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//PageLink"/>
+            </source>
+            <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="page">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </argument>
+          </source>
+          <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/basicwebsite#//Page/name"/>
+        </source>
+        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".html">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </argument>
+        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/concat"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="'>"/>
+      <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/toUpperFirst">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="aPageLink" referredVariable="/0/generatePageContent.5/aPageLink">
+            <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//PageLink"/>
+          </source>
+          <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/basicwebsite#//PageContent/name"/>
+        </source>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;/a>"/>
+      <parameter name="aPageLink">
+        <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//PageLink"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="generatePageContent" visibility="Public">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;a class='paragraphLink' href='#"/>
+      <body xsi:type="ocl.ecore:OperationCallExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/ecore_EObject_Class/eGet">
+            <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Paragraph"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="aParagraphLink" referredVariable="/0/generatePageContent.6/aParagraphLink">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//ParagraphLink"/>
+            </source>
+            <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="paragraph">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </argument>
+          </source>
+          <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/basicwebsite#//PageContent/name"/>
+        </source>
+        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/toLower"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="'>"/>
+      <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/toUpperFirst">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="aParagraphLink" referredVariable="/0/generatePageContent.6/aParagraphLink">
+            <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//ParagraphLink"/>
+          </source>
+          <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/basicwebsite#//PageContent/name"/>
+        </source>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;/a>"/>
+      <parameter name="aParagraphLink">
+        <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//ParagraphLink"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="generatePageContent" visibility="Public">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;a class='externalLink' href='"/>
+      <body xsi:type="ocl.ecore:PropertyCallExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="ocl.ecore:VariableExp" name="aExternalLink" referredVariable="/0/generatePageContent.7/aExternalLink">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//ExternalLink"/>
+        </source>
+        <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/basicwebsite#//ExternalLink/address"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="'>"/>
+      <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/toUpperFirst">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="aExternalLink" referredVariable="/0/generatePageContent.7/aExternalLink">
+            <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//ExternalLink"/>
+          </source>
+          <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/basicwebsite#//PageContent/name"/>
+        </source>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;/a>"/>
+      <parameter name="aExternalLink">
+        <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//ExternalLink"/>
+      </parameter>
+    </ownedModuleElement>
+  </mtl:Module>
+  <ecore:EPackage name="additions">
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_String_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eAnnotations>
+      <eOperations name="toUpperFirst">
+        <eAnnotations source="MTL"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Integer_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Real_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Real"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ecore_EObject_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </eAnnotations>
+      <eOperations name="eGet">
+        <eAnnotations source="MTL non-standard"/>
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        <eParameters name="featureName">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="generateElement">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generateElement"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aWebsite">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//WebSite"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="generatePage">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generatePage"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aPage">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Page"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="generatePageContent">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generatePageContent"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aPageContent">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//PageContent"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="generatePageContent">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generatePageContent.1"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aParagraph">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Paragraph"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="generatePageContent">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generatePageContent.2"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aSection">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Section"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="generatePageContent">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generatePageContent.3"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aParagraphButton">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//ParagraphButton"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="generatePageContent">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generatePageContent.4"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aPageButton">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//PageButton"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="generatePageContent">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generatePageContent.5"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aPageLink">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//PageLink"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="generatePageContent">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generatePageContent.6"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aParagraphLink">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//ParagraphLink"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="generatePageContent">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generatePageContent.7"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aExternalLink">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//ExternalLink"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_OclAny_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Collection(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Collection(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Sequence(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_OrderedSet(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="basicwebsite_WebSite_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.example.org/basicwebsite#//WebSite"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="basicwebsite_Page_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.example.org/basicwebsite#//Page"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="basicwebsite_PageContent_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.example.org/basicwebsite#//PageContent"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="basicwebsite_Paragraph_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.example.org/basicwebsite#//Paragraph"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="basicwebsite_Section_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.example.org/basicwebsite#//Section"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="basicwebsite_ParagraphButton_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.example.org/basicwebsite#//ParagraphButton"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="basicwebsite_PageButton_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.example.org/basicwebsite#//PageButton"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="basicwebsite_PageLink_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.example.org/basicwebsite#//PageLink"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="basicwebsite_ParagraphLink_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.example.org/basicwebsite#//ParagraphLink"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="basicwebsite_ExternalLink_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.example.org/basicwebsite#//ExternalLink"/>
+      </eAnnotations>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//WebSite"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//WebSite"/>
+  </ocl.ecore:Variable>
+  <ecore:EPackage name="collections">
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Page)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Page"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(PageContent)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//PageContent"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Paragraph)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Paragraph"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Section)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Section"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Link)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Link"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Button)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Button"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//WebSite"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Page"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Page"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//WebSite"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Page"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Page"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Page"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Page"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Page"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Page"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Page"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//PageContent"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//PageContent"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Page"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//PageContent"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//PageContent"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Paragraph"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Paragraph"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Paragraph"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Paragraph"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Section"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Section"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Section"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Section"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Section"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Paragraph"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Paragraph"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Section"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Section"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Section"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Section"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Section"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Section"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Link"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Link"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Section"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Section"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Button"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Button"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//Section"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//ParagraphButton"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//ParagraphButton"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//ParagraphButton"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//ParagraphButton"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//PageButton"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//PageButton"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//PageButton"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//PageButton"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//PageLink"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//PageLink"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//PageLink"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//PageLink"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//ParagraphLink"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//ParagraphLink"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//ParagraphLink"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//ParagraphLink"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//ExternalLink"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//ExternalLink"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//ExternalLink"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/basicwebsite#//ExternalLink"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ecore:EAnnotation source="positions">
+    <eAnnotations source="positions.0" references="/0/%">
+      <details key="start" value="29"/>
+      <details key="end" value="82"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1" references="/0/generateElement">
+      <details key="start" value="221"/>
+      <details key="end" value="372"/>
+      <details key="line" value="12"/>
+    </eAnnotations>
+    <eAnnotations source="positions.2" references="/0/generateElement/%">
+      <details key="start" value="292"/>
+      <details key="end" value="360"/>
+      <details key="line" value="14"/>
+    </eAnnotations>
+    <eAnnotations source="positions.3" references="/0/generateElement/%/%">
+      <details key="start" value="330"/>
+      <details key="end" value="331"/>
+      <details key="line" value="15"/>
+    </eAnnotations>
+    <eAnnotations source="positions.4" references="/0/generateElement/%/%.1">
+      <details key="start" value="332"/>
+      <details key="end" value="351"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.5" references="/0/generateElement/%/%.1/aPage">
+      <details key="start" value="345"/>
+      <details key="end" value="350"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.6" references="/0/generateElement/%/%.2">
+      <details key="start" value="353"/>
+      <details key="end" value="354"/>
+      <details key="line" value="16"/>
+    </eAnnotations>
+    <eAnnotations source="positions.7" references="/0/generateElement/%/aPage">
+      <details key="start" value="298"/>
+      <details key="end" value="310"/>
+      <details key="line" value="14"/>
+    </eAnnotations>
+    <eAnnotations source="positions.8" references="/0/generateElement/%/%.3">
+      <details key="start" value="313"/>
+      <details key="end" value="327"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.9" references="/0/generateElement/%/%.3/aWebsite">
+      <details key="start" value="313"/>
+      <details key="end" value="321"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.10" references="/0/generateElement/%.1">
+      <details key="start" value="142"/>
+      <details key="end" value="220"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.11" references="/0/generateElement/%.1/aPage">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.12" references="/0/generateElement/aWebsite">
+      <details key="start" value="254"/>
+      <details key="end" value="272"/>
+      <details key="line" value="12"/>
+    </eAnnotations>
+    <eAnnotations source="positions.13" references="/0/generatePage">
+      <details key="start" value="374"/>
+      <details key="end" value="740"/>
+      <details key="line" value="19"/>
+    </eAnnotations>
+    <eAnnotations source="positions.14" references="/0/generatePage/%">
+      <details key="start" value="419"/>
+      <details key="end" value="727"/>
+      <details key="line" value="20"/>
+    </eAnnotations>
+    <eAnnotations source="positions.15" references="/0/generatePage/%/%">
+      <details key="start" value="471"/>
+      <details key="end" value="512"/>
+      <details key="line" value="21"/>
+    </eAnnotations>
+    <eAnnotations source="positions.16" references="/0/generatePage/%/%.1">
+      <details key="start" value="513"/>
+      <details key="end" value="523"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.17" references="/0/generatePage/%/%.1/aPage">
+      <details key="start" value="513"/>
+      <details key="end" value="518"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.18" references="/0/generatePage/%/%.2">
+      <details key="start" value="525"/>
+      <details key="end" value="562"/>
+      <details key="line" value="24"/>
+    </eAnnotations>
+    <eAnnotations source="positions.19" references="/0/generatePage/%/%.3">
+      <details key="start" value="563"/>
+      <details key="end" value="588"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.20" references="/0/generatePage/%/%.3/%">
+      <details key="start" value="563"/>
+      <details key="end" value="573"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.21" references="/0/generatePage/%/%.3/%/aPage">
+      <details key="start" value="563"/>
+      <details key="end" value="568"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.22" references="/0/generatePage/%/%.4">
+      <details key="start" value="590"/>
+      <details key="end" value="597"/>
+      <details key="line" value="27"/>
+    </eAnnotations>
+    <eAnnotations source="positions.23" references="/0/generatePage/%/%.5">
+      <details key="start" value="599"/>
+      <details key="end" value="701"/>
+      <details key="line" value="28"/>
+    </eAnnotations>
+    <eAnnotations source="positions.24" references="/0/generatePage/%/%.5/%">
+      <details key="start" value="654"/>
+      <details key="end" value="657"/>
+      <details key="line" value="29"/>
+    </eAnnotations>
+    <eAnnotations source="positions.25" references="/0/generatePage/%/%.5/%.1">
+      <details key="start" value="658"/>
+      <details key="end" value="690"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.26" references="/0/generatePage/%/%.5/%.1/pageContent">
+      <details key="start" value="678"/>
+      <details key="end" value="689"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.27" references="/0/generatePage/%/%.5/%.2">
+      <details key="start" value="692"/>
+      <details key="end" value="693"/>
+      <details key="line" value="30"/>
+    </eAnnotations>
+    <eAnnotations source="positions.28" references="/0/generatePage/%/%.5/pageContent">
+      <details key="start" value="605"/>
+      <details key="end" value="630"/>
+      <details key="line" value="28"/>
+    </eAnnotations>
+    <eAnnotations source="positions.29" references="/0/generatePage/%/%.5/%.3">
+      <details key="start" value="633"/>
+      <details key="end" value="651"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.30" references="/0/generatePage/%/%.5/%.3/aPage">
+      <details key="start" value="633"/>
+      <details key="end" value="638"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.31" references="/0/generatePage/%/%.6">
+      <details key="start" value="703"/>
+      <details key="end" value="720"/>
+      <details key="line" value="30"/>
+    </eAnnotations>
+    <eAnnotations source="positions.32" references="/0/generatePage/%/%.7">
+      <details key="start" value="426"/>
+      <details key="end" value="452"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.33" references="/0/generatePage/%/%.7/%">
+      <details key="start" value="426"/>
+      <details key="end" value="436"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.34" references="/0/generatePage/%/%.7/%/aPage">
+      <details key="start" value="426"/>
+      <details key="end" value="431"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.35" references="/0/generatePage/%/%.7/%.1">
+      <details key="start" value="444"/>
+      <details key="end" value="451"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.36" references="/0/generatePage/%/%.8">
+      <details key="start" value="461"/>
+      <details key="end" value="468"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.37" references="/0/generatePage/%.1">
+      <details key="start" value="728"/>
+      <details key="end" value="729"/>
+      <details key="line" value="34"/>
+    </eAnnotations>
+    <eAnnotations source="positions.38" references="/0/generatePage/aPage">
+      <details key="start" value="404"/>
+      <details key="end" value="416"/>
+      <details key="line" value="19"/>
+    </eAnnotations>
+    <eAnnotations source="positions.39" references="/0/generatePageContent">
+      <details key="start" value="742"/>
+      <details key="end" value="828"/>
+      <details key="line" value="37"/>
+    </eAnnotations>
+    <eAnnotations source="positions.40" references="/0/generatePageContent/%">
+      <details key="start" value="808"/>
+      <details key="end" value="816"/>
+      <details key="line" value="38"/>
+    </eAnnotations>
+    <eAnnotations source="positions.41" references="/0/generatePageContent/aPageContent">
+      <details key="start" value="779"/>
+      <details key="end" value="805"/>
+      <details key="line" value="37"/>
+    </eAnnotations>
+    <eAnnotations source="positions.42" references="/0/generatePageContent.1">
+      <details key="start" value="830"/>
+      <details key="end" value="983"/>
+      <details key="line" value="41"/>
+    </eAnnotations>
+    <eAnnotations source="positions.43" references="/0/generatePageContent.1/%">
+      <details key="start" value="892"/>
+      <details key="end" value="899"/>
+      <details key="line" value="42"/>
+    </eAnnotations>
+    <eAnnotations source="positions.44" references="/0/generatePageContent.1/%.1">
+      <details key="start" value="900"/>
+      <details key="end" value="925"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.45" references="/0/generatePageContent.1/%.1/%">
+      <details key="start" value="900"/>
+      <details key="end" value="915"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.46" references="/0/generatePageContent.1/%.1/%/aParagraph">
+      <details key="start" value="900"/>
+      <details key="end" value="910"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.47" references="/0/generatePageContent.1/%.2">
+      <details key="start" value="927"/>
+      <details key="end" value="948"/>
+      <details key="line" value="42"/>
+    </eAnnotations>
+    <eAnnotations source="positions.48" references="/0/generatePageContent.1/%.3">
+      <details key="start" value="949"/>
+      <details key="end" value="964"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.49" references="/0/generatePageContent.1/%.3/aParagraph">
+      <details key="start" value="949"/>
+      <details key="end" value="959"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.50" references="/0/generatePageContent.1/%.4">
+      <details key="start" value="966"/>
+      <details key="end" value="971"/>
+      <details key="line" value="42"/>
+    </eAnnotations>
+    <eAnnotations source="positions.51" references="/0/generatePageContent.1/aParagraph">
+      <details key="start" value="867"/>
+      <details key="end" value="889"/>
+      <details key="line" value="41"/>
+    </eAnnotations>
+    <eAnnotations source="positions.52" references="/0/generatePageContent.2">
+      <details key="start" value="984"/>
+      <details key="end" value="1521"/>
+      <details key="line" value="44"/>
+    </eAnnotations>
+    <eAnnotations source="positions.53" references="/0/generatePageContent.2/%">
+      <details key="start" value="1042"/>
+      <details key="end" value="1055"/>
+      <details key="line" value="45"/>
+    </eAnnotations>
+    <eAnnotations source="positions.54" references="/0/generatePageContent.2/%.1">
+      <details key="start" value="1056"/>
+      <details key="end" value="1079"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.55" references="/0/generatePageContent.2/%.1/%">
+      <details key="start" value="1056"/>
+      <details key="end" value="1069"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.56" references="/0/generatePageContent.2/%.1/%/aSection">
+      <details key="start" value="1056"/>
+      <details key="end" value="1064"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.57" references="/0/generatePageContent.2/%.2">
+      <details key="start" value="1081"/>
+      <details key="end" value="1107"/>
+      <details key="line" value="45"/>
+    </eAnnotations>
+    <eAnnotations source="positions.58" references="/0/generatePageContent.2/%.3">
+      <details key="start" value="1108"/>
+      <details key="end" value="1122"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.59" references="/0/generatePageContent.2/%.3/aSection">
+      <details key="start" value="1108"/>
+      <details key="end" value="1116"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.60" references="/0/generatePageContent.2/%.4">
+      <details key="start" value="1124"/>
+      <details key="end" value="1131"/>
+      <details key="line" value="46"/>
+    </eAnnotations>
+    <eAnnotations source="positions.61" references="/0/generatePageContent.2/%.5">
+      <details key="start" value="1132"/>
+      <details key="end" value="1227"/>
+      <details key="line" value="47"/>
+    </eAnnotations>
+    <eAnnotations source="positions.62" references="/0/generatePageContent.2/%.5/%">
+      <details key="start" value="1184"/>
+      <details key="end" value="1186"/>
+      <details key="line" value="48"/>
+    </eAnnotations>
+    <eAnnotations source="positions.63" references="/0/generatePageContent.2/%.5/%.1">
+      <details key="start" value="1187"/>
+      <details key="end" value="1217"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.64" references="/0/generatePageContent.2/%.5/%.1/paragraph">
+      <details key="start" value="1207"/>
+      <details key="end" value="1216"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.65" references="/0/generatePageContent.2/%.5/%.2">
+      <details key="start" value="1219"/>
+      <details key="end" value="1220"/>
+      <details key="line" value="49"/>
+    </eAnnotations>
+    <eAnnotations source="positions.66" references="/0/generatePageContent.2/%.5/paragraph">
+      <details key="start" value="1138"/>
+      <details key="end" value="1159"/>
+      <details key="line" value="47"/>
+    </eAnnotations>
+    <eAnnotations source="positions.67" references="/0/generatePageContent.2/%.5/%.3">
+      <details key="start" value="1162"/>
+      <details key="end" value="1181"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.68" references="/0/generatePageContent.2/%.5/%.3/aSection">
+      <details key="start" value="1162"/>
+      <details key="end" value="1170"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.69" references="/0/generatePageContent.2/%.6">
+      <details key="start" value="1229"/>
+      <details key="end" value="1316"/>
+      <details key="line" value="50"/>
+    </eAnnotations>
+    <eAnnotations source="positions.70" references="/0/generatePageContent.2/%.6/%">
+      <details key="start" value="1275"/>
+      <details key="end" value="1277"/>
+      <details key="line" value="51"/>
+    </eAnnotations>
+    <eAnnotations source="positions.71" references="/0/generatePageContent.2/%.6/%.1">
+      <details key="start" value="1278"/>
+      <details key="end" value="1306"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.72" references="/0/generatePageContent.2/%.6/%.1/section">
+      <details key="start" value="1298"/>
+      <details key="end" value="1305"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.73" references="/0/generatePageContent.2/%.6/%.2">
+      <details key="start" value="1308"/>
+      <details key="end" value="1309"/>
+      <details key="line" value="52"/>
+    </eAnnotations>
+    <eAnnotations source="positions.74" references="/0/generatePageContent.2/%.6/section">
+      <details key="start" value="1235"/>
+      <details key="end" value="1252"/>
+      <details key="line" value="50"/>
+    </eAnnotations>
+    <eAnnotations source="positions.75" references="/0/generatePageContent.2/%.6/%.3">
+      <details key="start" value="1255"/>
+      <details key="end" value="1272"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.76" references="/0/generatePageContent.2/%.6/%.3/aSection">
+      <details key="start" value="1255"/>
+      <details key="end" value="1263"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.77" references="/0/generatePageContent.2/%.7">
+      <details key="start" value="1318"/>
+      <details key="end" value="1403"/>
+      <details key="line" value="53"/>
+    </eAnnotations>
+    <eAnnotations source="positions.78" references="/0/generatePageContent.2/%.7/%">
+      <details key="start" value="1364"/>
+      <details key="end" value="1366"/>
+      <details key="line" value="54"/>
+    </eAnnotations>
+    <eAnnotations source="positions.79" references="/0/generatePageContent.2/%.7/%.1">
+      <details key="start" value="1367"/>
+      <details key="end" value="1393"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.80" references="/0/generatePageContent.2/%.7/%.1/aLink">
+      <details key="start" value="1387"/>
+      <details key="end" value="1392"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.81" references="/0/generatePageContent.2/%.7/%.2">
+      <details key="start" value="1395"/>
+      <details key="end" value="1396"/>
+      <details key="line" value="55"/>
+    </eAnnotations>
+    <eAnnotations source="positions.82" references="/0/generatePageContent.2/%.7/aLink">
+      <details key="start" value="1325"/>
+      <details key="end" value="1336"/>
+      <details key="line" value="53"/>
+    </eAnnotations>
+    <eAnnotations source="positions.83" references="/0/generatePageContent.2/%.7/%.3">
+      <details key="start" value="1339"/>
+      <details key="end" value="1361"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.84" references="/0/generatePageContent.2/%.7/%.3/aSection">
+      <details key="start" value="1339"/>
+      <details key="end" value="1347"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.85" references="/0/generatePageContent.2/%.7/%.3/%">
+      <details key="start" value="1353"/>
+      <details key="end" value="1360"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.86" references="/0/generatePageContent.2/%.8">
+      <details key="start" value="1405"/>
+      <details key="end" value="1498"/>
+      <details key="line" value="56"/>
+    </eAnnotations>
+    <eAnnotations source="positions.87" references="/0/generatePageContent.2/%.8/%">
+      <details key="start" value="1457"/>
+      <details key="end" value="1459"/>
+      <details key="line" value="57"/>
+    </eAnnotations>
+    <eAnnotations source="positions.88" references="/0/generatePageContent.2/%.8/%.1">
+      <details key="start" value="1460"/>
+      <details key="end" value="1488"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.89" references="/0/generatePageContent.2/%.8/%.1/aButton">
+      <details key="start" value="1480"/>
+      <details key="end" value="1487"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.90" references="/0/generatePageContent.2/%.8/%.2">
+      <details key="start" value="1490"/>
+      <details key="end" value="1491"/>
+      <details key="line" value="58"/>
+    </eAnnotations>
+    <eAnnotations source="positions.91" references="/0/generatePageContent.2/%.8/aButton">
+      <details key="start" value="1412"/>
+      <details key="end" value="1427"/>
+      <details key="line" value="56"/>
+    </eAnnotations>
+    <eAnnotations source="positions.92" references="/0/generatePageContent.2/%.8/%.3">
+      <details key="start" value="1430"/>
+      <details key="end" value="1454"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.93" references="/0/generatePageContent.2/%.8/%.3/aSection">
+      <details key="start" value="1430"/>
+      <details key="end" value="1438"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.94" references="/0/generatePageContent.2/%.8/%.3/%">
+      <details key="start" value="1444"/>
+      <details key="end" value="1453"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.95" references="/0/generatePageContent.2/%.9">
+      <details key="start" value="1499"/>
+      <details key="end" value="1509"/>
+      <details key="line" value="59"/>
+    </eAnnotations>
+    <eAnnotations source="positions.96" references="/0/generatePageContent.2/aSection">
+      <details key="start" value="1021"/>
+      <details key="end" value="1039"/>
+      <details key="line" value="44"/>
+    </eAnnotations>
+    <eAnnotations source="positions.97" references="/0/generatePageContent.3">
+      <details key="start" value="1523"/>
+      <details key="end" value="1734"/>
+      <details key="line" value="62"/>
+    </eAnnotations>
+    <eAnnotations source="positions.98" references="/0/generatePageContent.3/%">
+      <details key="start" value="1596"/>
+      <details key="end" value="1630"/>
+      <details key="line" value="63"/>
+    </eAnnotations>
+    <eAnnotations source="positions.99" references="/0/generatePageContent.3/%.1">
+      <details key="start" value="1631"/>
+      <details key="end" value="1680"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.100" references="/0/generatePageContent.3/%.1/%">
+      <details key="start" value="1631"/>
+      <details key="end" value="1670"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.101" references="/0/generatePageContent.3/%.1/%/%">
+      <details key="start" value="1631"/>
+      <details key="end" value="1665"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.102" references="/0/generatePageContent.3/%.1/%/%/aParagraphButton">
+      <details key="start" value="1631"/>
+      <details key="end" value="1647"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.103" references="/0/generatePageContent.3/%.1/%/%/%">
+      <details key="start" value="1653"/>
+      <details key="end" value="1664"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.104" references="/0/generatePageContent.3/%.2">
+      <details key="start" value="1682"/>
+      <details key="end" value="1684"/>
+      <details key="line" value="63"/>
+    </eAnnotations>
+    <eAnnotations source="positions.105" references="/0/generatePageContent.3/%.3">
+      <details key="start" value="1685"/>
+      <details key="end" value="1706"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.106" references="/0/generatePageContent.3/%.3/aParagraphButton">
+      <details key="start" value="1685"/>
+      <details key="end" value="1701"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.107" references="/0/generatePageContent.3/%.4">
+      <details key="start" value="1708"/>
+      <details key="end" value="1722"/>
+      <details key="line" value="63"/>
+    </eAnnotations>
+    <eAnnotations source="positions.108" references="/0/generatePageContent.3/aParagraphButton">
+      <details key="start" value="1560"/>
+      <details key="end" value="1593"/>
+      <details key="line" value="62"/>
+    </eAnnotations>
+    <eAnnotations source="positions.109" references="/0/generatePageContent.4">
+      <details key="start" value="1736"/>
+      <details key="end" value="1927"/>
+      <details key="line" value="66"/>
+    </eAnnotations>
+    <eAnnotations source="positions.110" references="/0/generatePageContent.4/%">
+      <details key="start" value="1799"/>
+      <details key="end" value="1832"/>
+      <details key="line" value="67"/>
+    </eAnnotations>
+    <eAnnotations source="positions.111" references="/0/generatePageContent.4/%.1">
+      <details key="start" value="1833"/>
+      <details key="end" value="1878"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.112" references="/0/generatePageContent.4/%.1/%">
+      <details key="start" value="1833"/>
+      <details key="end" value="1862"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.113" references="/0/generatePageContent.4/%.1/%/%">
+      <details key="start" value="1833"/>
+      <details key="end" value="1857"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.114" references="/0/generatePageContent.4/%.1/%/%/aPageButton">
+      <details key="start" value="1833"/>
+      <details key="end" value="1844"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.115" references="/0/generatePageContent.4/%.1/%/%/%">
+      <details key="start" value="1850"/>
+      <details key="end" value="1856"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.116" references="/0/generatePageContent.4/%.1/%.1">
+      <details key="start" value="1870"/>
+      <details key="end" value="1877"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.117" references="/0/generatePageContent.4/%.2">
+      <details key="start" value="1880"/>
+      <details key="end" value="1882"/>
+      <details key="line" value="67"/>
+    </eAnnotations>
+    <eAnnotations source="positions.118" references="/0/generatePageContent.4/%.3">
+      <details key="start" value="1883"/>
+      <details key="end" value="1899"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.119" references="/0/generatePageContent.4/%.3/aPageButton">
+      <details key="start" value="1883"/>
+      <details key="end" value="1894"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.120" references="/0/generatePageContent.4/%.4">
+      <details key="start" value="1901"/>
+      <details key="end" value="1915"/>
+      <details key="line" value="67"/>
+    </eAnnotations>
+    <eAnnotations source="positions.121" references="/0/generatePageContent.4/aPageButton">
+      <details key="start" value="1773"/>
+      <details key="end" value="1796"/>
+      <details key="line" value="66"/>
+    </eAnnotations>
+    <eAnnotations source="positions.122" references="/0/generatePageContent.5">
+      <details key="start" value="1929"/>
+      <details key="end" value="2110"/>
+      <details key="line" value="70"/>
+    </eAnnotations>
+    <eAnnotations source="positions.123" references="/0/generatePageContent.5/%">
+      <details key="start" value="1988"/>
+      <details key="end" value="2014"/>
+      <details key="line" value="71"/>
+    </eAnnotations>
+    <eAnnotations source="positions.124" references="/0/generatePageContent.5/%.1">
+      <details key="start" value="2015"/>
+      <details key="end" value="2058"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.125" references="/0/generatePageContent.5/%.1/%">
+      <details key="start" value="2015"/>
+      <details key="end" value="2042"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.126" references="/0/generatePageContent.5/%.1/%/%">
+      <details key="start" value="2015"/>
+      <details key="end" value="2037"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.127" references="/0/generatePageContent.5/%.1/%/%/aPageLink">
+      <details key="start" value="2015"/>
+      <details key="end" value="2024"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.128" references="/0/generatePageContent.5/%.1/%/%/%">
+      <details key="start" value="2030"/>
+      <details key="end" value="2036"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.129" references="/0/generatePageContent.5/%.1/%.1">
+      <details key="start" value="2050"/>
+      <details key="end" value="2057"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.130" references="/0/generatePageContent.5/%.2">
+      <details key="start" value="2060"/>
+      <details key="end" value="2062"/>
+      <details key="line" value="71"/>
+    </eAnnotations>
+    <eAnnotations source="positions.131" references="/0/generatePageContent.5/%.3">
+      <details key="start" value="2063"/>
+      <details key="end" value="2092"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.132" references="/0/generatePageContent.5/%.3/%">
+      <details key="start" value="2063"/>
+      <details key="end" value="2077"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.133" references="/0/generatePageContent.5/%.3/%/aPageLink">
+      <details key="start" value="2063"/>
+      <details key="end" value="2072"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.134" references="/0/generatePageContent.5/%.4">
+      <details key="start" value="2094"/>
+      <details key="end" value="2098"/>
+      <details key="line" value="71"/>
+    </eAnnotations>
+    <eAnnotations source="positions.135" references="/0/generatePageContent.5/aPageLink">
+      <details key="start" value="1966"/>
+      <details key="end" value="1985"/>
+      <details key="line" value="70"/>
+    </eAnnotations>
+    <eAnnotations source="positions.136" references="/0/generatePageContent.6">
+      <details key="start" value="2112"/>
+      <details key="end" value="2318"/>
+      <details key="line" value="74"/>
+    </eAnnotations>
+    <eAnnotations source="positions.137" references="/0/generatePageContent.6/%">
+      <details key="start" value="2181"/>
+      <details key="end" value="2213"/>
+      <details key="line" value="75"/>
+    </eAnnotations>
+    <eAnnotations source="positions.138" references="/0/generatePageContent.6/%.1">
+      <details key="start" value="2214"/>
+      <details key="end" value="2261"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.139" references="/0/generatePageContent.6/%.1/%">
+      <details key="start" value="2214"/>
+      <details key="end" value="2251"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.140" references="/0/generatePageContent.6/%.1/%/%">
+      <details key="start" value="2214"/>
+      <details key="end" value="2246"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.141" references="/0/generatePageContent.6/%.1/%/%/aParagraphLink">
+      <details key="start" value="2214"/>
+      <details key="end" value="2228"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.142" references="/0/generatePageContent.6/%.1/%/%/%">
+      <details key="start" value="2234"/>
+      <details key="end" value="2245"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.143" references="/0/generatePageContent.6/%.2">
+      <details key="start" value="2263"/>
+      <details key="end" value="2265"/>
+      <details key="line" value="75"/>
+    </eAnnotations>
+    <eAnnotations source="positions.144" references="/0/generatePageContent.6/%.3">
+      <details key="start" value="2266"/>
+      <details key="end" value="2300"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.145" references="/0/generatePageContent.6/%.3/%">
+      <details key="start" value="2266"/>
+      <details key="end" value="2285"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.146" references="/0/generatePageContent.6/%.3/%/aParagraphLink">
+      <details key="start" value="2266"/>
+      <details key="end" value="2280"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.147" references="/0/generatePageContent.6/%.4">
+      <details key="start" value="2302"/>
+      <details key="end" value="2306"/>
+      <details key="line" value="75"/>
+    </eAnnotations>
+    <eAnnotations source="positions.148" references="/0/generatePageContent.6/aParagraphLink">
+      <details key="start" value="2149"/>
+      <details key="end" value="2178"/>
+      <details key="line" value="74"/>
+    </eAnnotations>
+    <eAnnotations source="positions.149" references="/0/generatePageContent.7">
+      <details key="start" value="2320"/>
+      <details key="end" value="2495"/>
+      <details key="line" value="78"/>
+    </eAnnotations>
+    <eAnnotations source="positions.150" references="/0/generatePageContent.7/%">
+      <details key="start" value="2387"/>
+      <details key="end" value="2417"/>
+      <details key="line" value="79"/>
+    </eAnnotations>
+    <eAnnotations source="positions.151" references="/0/generatePageContent.7/%.1">
+      <details key="start" value="2418"/>
+      <details key="end" value="2439"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.152" references="/0/generatePageContent.7/%.1/aExternalLink">
+      <details key="start" value="2418"/>
+      <details key="end" value="2431"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.153" references="/0/generatePageContent.7/%.2">
+      <details key="start" value="2441"/>
+      <details key="end" value="2443"/>
+      <details key="line" value="79"/>
+    </eAnnotations>
+    <eAnnotations source="positions.154" references="/0/generatePageContent.7/%.3">
+      <details key="start" value="2444"/>
+      <details key="end" value="2477"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.155" references="/0/generatePageContent.7/%.3/%">
+      <details key="start" value="2444"/>
+      <details key="end" value="2462"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.156" references="/0/generatePageContent.7/%.3/%/aExternalLink">
+      <details key="start" value="2444"/>
+      <details key="end" value="2457"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.157" references="/0/generatePageContent.7/%.4">
+      <details key="start" value="2479"/>
+      <details key="end" value="2483"/>
+      <details key="line" value="79"/>
+    </eAnnotations>
+    <eAnnotations source="positions.158" references="/0/generatePageContent.7/aExternalLink">
+      <details key="start" value="2357"/>
+      <details key="end" value="2384"/>
+      <details key="line" value="78"/>
+    </eAnnotations>
+  </ecore:EAnnotation>
+</xmi:XMI>

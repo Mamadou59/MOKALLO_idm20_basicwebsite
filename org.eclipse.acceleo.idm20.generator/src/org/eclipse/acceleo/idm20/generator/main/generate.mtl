@@ -1,0 +1,80 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module generate.
+ */]
+[module generate('http://www.example.org/basicwebsite')]
+
+
+[**
+ * The documentation of the template generateElement.
+ * @param aPage
+ */]
+[template public generateElement(aWebsite : WebSite)]
+[comment @main/]
+[for (aPage : Page | aWebsite.pages)]
+	[generatePage(aPage)/]
+[/for]
+[/template]
+
+[template public generatePage(aPage : Page)]
+[file (aPage.name.concat('.html'), false, 'UTF-8')]
+<!DOCTYPE html>
+<html>
+ 	<head>
+		<title>[aPage.name/]</title>
+	</head>
+  	<body>
+  		<h1> [aPage.name.toUpperFirst()/] </h1>
+		[for (pageContent : PageContent | aPage.pagecontents)]
+			[generatePageContent(pageContent)/]
+		[/for] 
+	</body>
+</html>
+[/file]
+
+[/template]
+
+[template public generatePageContent(aPageContent : PageContent)]
+	// TODO
+[/template]
+
+[template public generatePageContent(aParagraph : Paragraph)]
+<p id='[aParagraph.name.toLower()/]' class='paragraph'> [aParagraph.text/] </p>
+[/template]
+[template public generatePageContent(aSection : Section)]
+<section id='[aSection.name.toLower()/]' class='section'> 
+	<h2> [aSection.title/] </h2>
+	[for (paragraph : Paragraph | aSection.paragraphs)]
+		[generatePageContent(paragraph)/]
+	[/for]
+	[for (section : Section | aSection.sections)]
+		[generatePageContent(section)/]
+	[/for]
+	[for ( aLink: Link | aSection.eGet('links'))]
+		[generatePageContent(aLink)/]
+	[/for]
+	[for ( aButton: Button | aSection.eGet('buttons'))]
+		[generatePageContent(aButton)/]
+	[/for]
+</section>
+[/template]
+
+[template public generatePageContent(aParagraphButton: ParagraphButton)]
+<Button class='button'> <a href='#[aParagraphButton.eGet('paragraph').name.toLower()/]'>[aParagraphButton.name/]</a> </Button>
+[/template]
+
+[template public generatePageContent(aPageButton: PageButton)]
+<Button class='button'> <a href='[aPageButton.eGet('page').name.concat('.html')/]'>[aPageButton.name/]</a> </Button>
+[/template]
+
+[template public generatePageContent(aPageLink: PageLink)]
+<a class='pageLink' href='[aPageLink.eGet('page').name.concat('.html')/]'>[aPageLink.name.toUpperFirst()/]</a>
+[/template]
+
+[template public generatePageContent(aParagraphLink: ParagraphLink)]
+<a class='paragraphLink' href='#[aParagraphLink.eGet('paragraph').name.toLower()/]'>[aParagraphLink.name.toUpperFirst()/]</a>
+[/template]
+
+[template public generatePageContent(aExternalLink: ExternalLink)]
+<a class='externalLink' href='[aExternalLink.address/]'>[aExternalLink.name.toUpperFirst()/]</a>
+[/template]

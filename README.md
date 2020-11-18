@@ -39,3 +39,19 @@ Ce depôt contient six projet qui sont:
 		    ├── page1.html
 		    ├── page2.html
 		    └── page.css
+		    
+- idm.transfos
+
+		Dans ce repertoire se trouve la partie sur la transformation d'un model vers un autre.
+		
+		
+		idm.transfos/
+		├── pje20.ville (le metamodel de ville)
+		├── idm.annuaire (le metamodel annuaire)
+		├── idm.transfo.ville2person (les transfos de ville vers annuaire)
+		│   └── transform
+		│   	├── habitant2person.qvto 
+		│   	├── ville2lib.qvto
+		│   	└── construction2building.qvto
+		├── idm.annuaire (le metamodel annuaire)
+		└── test (qui contient un model de ville)
